@@ -1,0 +1,23 @@
+---
+# Project Variables
+dockerUser: geoffh1977
+dockerUserEmail: geoffh1977@gmail.com
+license: gnu-gpl-v3.0
+
+# Source Build Variables
+buildImageName: ubuntu
+buildImageVersion: bionic
+
+# Final Image Variables
+finalImageName: ubuntu
+finalImageVersion: bionic
+
+# Application Variables
+appName: Ubuntu Base Image
+# alpineDirVersion: 3.9
+# alpineMajorVersion: 3
+# alpineBaseUrl: 'http://dl-cdn.alpinelinux.org/alpine'
+# timeZone: 'Australia/Melbourne'
+ubuntuUser: user
+ubuntuUid: 1000
+ubuntuGid: 1000

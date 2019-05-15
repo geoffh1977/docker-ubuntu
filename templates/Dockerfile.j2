@@ -1,0 +1,15 @@
+# Builds Alpine Filesystem
+FROM {{ buildImageName + ":" + buildImageVersion }} AS build
+LABEL maintainer="{{ dockerUser }} <{{ dockerUserEmail }}>"
+
+ENV UBUNTU_USER={{ ubuntuUser }} \
+    UBUNTU_UID={{ ubuntuUid }} \
+    UBUNTU_GID={{ ubuntuGid }} \
+    UBUNTU_VERSION={{ finalImageVersion }}
+
+RUN addgroup --gid=${UBUNTU_GID} ${UBUNTU_USER} &&  \
+    adduser --disabled-password --uid=${UBUNTU_UID} --gid=${UBUNTU_GID} --gecos "Ubuntu User" --home "/home/${UBUNTU_USER}" --shell "/bin/bash" ${UBUNTU_USER}
+
+USER ${UBUNTU_USER}
+WORKDIR /home/{{ ubuntuUser }}
+CMD ["/bin/bash"]
